@@ -1,4 +1,3 @@
-import getFullResponseFromAPI from './1-promise';
+import handleProfileSignup from "./3-all";
 
-console.log(getFullResponseFromAPI(true));
-console.log(getFullResponseFromAPI(false));
+handleProfileSignup();
