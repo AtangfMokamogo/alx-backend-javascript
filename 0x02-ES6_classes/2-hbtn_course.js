@@ -23,7 +23,7 @@ export default class HolbertonCourse {
     }
   }
 
-  set lenth(anotherLength) {
+  set length(anotherLength) {
     if (anotherLength && typeof anotherLength === 'number') {
       this._length = anotherLength;
     }
