@@ -13,37 +13,40 @@ async function countStudents(filePath) {
     let numStudents = 0;
     let isHeader = true;
 
-    fs.createReadStream(filePath)
-      .pipe(csv({ skipEmptyLines: true, headers: ['firstname', 'lastname', 'age', 'field'] }))
-      .on('data', (row) => {
+    try {
+      const studentData = fs.readFileSync(filePath, 'utf-8').split('\n');
+
+      for (let i = 0; i < studentData.length; i++) {
+        const row = studentData[i].trim();
         if (isHeader) {
-            isHeader = false;
-            return;
+          isHeader = false;
+          continue;
         }
 
-        if (row.firstname && row.lastname && row.age && row.field) {
+        const [firstname, lastname, age, field] = row.split(',');
+
+        if (firstname && lastname && age && field) {
           numStudents += 1;
-          const field = row.field.trim();
-          if (!students[field]) {
-            students[field] = [];
+          const trimmedField = field.trim();
+          if (!students[trimmedField]) {
+            students[trimmedField] = [];
           }
-          students[field].push(row.firstname);
+          students[trimmedField].push(firstname);
         }
-      })
-      .on('end', () => {
-        if (numStudents === 0) {
-          reject(new Error('Cannot load the database'));
-        } else {
-          console.log(`Number of students: ${numStudents}`);
-          for (const field in students) {
-            console.log(`Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}`);
-          }
-          resolve();
+      }
+
+      if (numStudents === 0) {
+        reject(new Error('Cannot load the database'));
+      } else {
+        console.log(`Number of students: ${numStudents}`);
+        for (const field in students) {
+          console.log(`Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}`);
         }
-      })
-      .on('error', (error) => {
-        reject(error);
-      });
+        resolve();
+      }
+    } catch (error) {
+      reject(error);
+    }
   });
 }
 
