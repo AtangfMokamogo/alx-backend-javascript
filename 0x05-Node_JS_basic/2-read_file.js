@@ -37,7 +37,7 @@ function countStudents(filepath) {
     console.log(`Number of students: ${numStudents}`);
 
     for (const field in students) {
-      if (students.hasOwnProperty.call(field)) {
+      if (students.hasOwnProperty(field)) {
         const { count, list } = students[field];
         console.log(`Number of students in ${field}: ${count}. List: ${list.join(', ')}`);
       }
