@@ -1,13 +1,19 @@
 const fs = require('fs');
 
-function countStudents (path) {
+/**
+ * Const number of students in a field.
+ * @function
+ * @param {String} filepath - The first number.
+ * @author Atang Mokamogo
+ */
+function countStudents (filepath) {
   try {
     const students = {};
 
     // This Skips the first line
     let isHeader = true;
 
-    const fileData = fs.readFileSync(path, 'utf-8');
+    const fileData = fs.readFileSync(filepath, 'utf-8');
 
     fileData
       .split('\n')
