@@ -6,7 +6,7 @@ const fs = require('fs');
  * @param {String} filepath - The first number.
  * @author Atang Mokamogo
  */
-function countStudents (filepath) {
+function countStudents(filepath) {
   try {
     const students = {};
 
@@ -28,7 +28,7 @@ function countStudents (filepath) {
           if (!students[field]) {
             students[field] = { count: 0, list: [] };
           }
-          students[field].count++;
+          students[field].count += 1;
           students[field].list.push(firstname);
         }
       });
@@ -37,8 +37,10 @@ function countStudents (filepath) {
     console.log(`Number of students: ${numStudents}`);
 
     for (const field in students) {
-      const { count, list } = students[field];
-      console.log(`Number of students in ${field}: ${count}. List: ${list.join(', ')}`);
+      if (students.hasOwnProperty.call(field)) {
+        const { count, list } = students[field];
+        console.log(`Number of students in ${field}: ${count}. List: ${list.join(', ')}`);
+      }
     }
   } catch (error) {
     throw new Error('Cannot load the database');
