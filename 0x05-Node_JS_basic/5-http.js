@@ -10,7 +10,7 @@ const host = 'localhost';
  * @param {String} filepath - The expected file path
  * @author Atang Mokamogo
  */
-function countStudents (filePath) {
+async function countStudents(filePath) {
   return new Promise((resolve, reject) => {
     const students = {};
     let numStudents = 0;
