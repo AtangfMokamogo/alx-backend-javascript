@@ -1,5 +1,4 @@
 const fs = require('fs');
-const csv = require('csv-parser');
 
 /**
  * Const number of students in a field.
@@ -7,7 +6,7 @@ const csv = require('csv-parser');
  * @param {String} filepath - The first number.
  * @author Atang Mokamogo
  */
-async function countStudents(filePath) {
+async function countStudents (filePath) {
   return new Promise((resolve, reject) => {
     const students = {};
     let numStudents = 0;
