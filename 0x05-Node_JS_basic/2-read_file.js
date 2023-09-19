@@ -6,7 +6,7 @@ const fs = require('fs');
  * @param {String} filepath - The first number.
  * @author Atang Mokamogo
  */
-function countStudents(filepath) {
+function countStudents (filepath) {
   try {
     const students = {};
 

@@ -9,7 +9,7 @@ const app = http.createServer((req, res) => {
 });
 
 app.listen(port, host, () => {
-  process.stdout.write(`Server listening at -> http://${host}:${port}\n`);
+  console.log(`Server listening at -> http://${host}:${port}\n`);
 });
 
 module.exports = app;
