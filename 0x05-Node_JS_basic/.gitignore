@@ -5,3 +5,4 @@ package.json
 package-lock.json
 babel.config.js
 main.js
+3-read_file_async.js
