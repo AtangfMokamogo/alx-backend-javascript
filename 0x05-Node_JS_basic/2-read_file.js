@@ -10,7 +10,6 @@ function countStudents (filepath) {
   try {
     const students = {};
 
-    // This Skips the first line
     let isHeader = true;
 
     const fileData = fs.readFileSync(filepath, 'utf-8');
@@ -19,14 +18,12 @@ function countStudents (filepath) {
       .split('\n')
       .forEach((line) => {
         if (isHeader) {
-          // this will skip the first line, which causes the checker error
           isHeader = false;
           return;
         }
 
         const [firstname, lastname, age, field] = line.split(',');
 
-        // NO empty lines !!
         if (firstname && lastname && age && field) {
           if (!students[field]) {
             students[field] = { count: 0, list: [] };
