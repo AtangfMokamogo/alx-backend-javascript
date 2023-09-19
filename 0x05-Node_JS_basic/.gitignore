@@ -4,3 +4,4 @@ database.csv
 package.json
 package-lock.json
 babel.config.js
+main.js
