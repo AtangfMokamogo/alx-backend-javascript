@@ -10,7 +10,7 @@ const host = 'localhost';
  * @param {String} filepath - The expected file path
  * @author Atang Mokamogo
  */
-function countStudents(filePath) {
+function countStudents (filePath) {
   return new Promise((resolve, reject) => {
     const students = {};
     let numStudents = 0;
@@ -35,7 +35,7 @@ function countStudents(filePath) {
           }
         }
 
-        isHeader = false; // Mark header as processed after the first line.
+        isHeader = false;
       }
 
       if (numStudents === 0) {
@@ -49,7 +49,7 @@ function countStudents(filePath) {
           }
         }
         resData += 'Done!';
-        resolve(resData); // Resolve with the formatted response.
+        resolve(resData);
       }
     } catch (error) {
       reject(error);
@@ -78,6 +78,6 @@ const app = http.createServer(async (req, res) => {
   }
 });
 
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`Server listening at -> http://${host}:${port}\n`);
 });
