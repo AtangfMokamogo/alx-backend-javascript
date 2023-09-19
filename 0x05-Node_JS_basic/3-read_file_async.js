@@ -15,7 +15,7 @@ async function countStudents (filePath) {
     try {
       const studentData = fs.readFileSync(filePath, 'utf-8').split('\n');
 
-      for (let i = 0; i < studentData.length; i++) {
+      for (let i = 0; i < studentData.length; i += 1) {
         const row = studentData[i].trim();
         if (isHeader) {
           isHeader = false;
@@ -39,8 +39,11 @@ async function countStudents (filePath) {
       } else {
         console.log(`Number of students: ${numStudents}`);
         for (const field in students) {
-          console.log(`Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}`);
+          if (field in students) {
+            console.log(`Number of students in ${field}: ${students[field].length}. List: ${students[field].join(', ')}`);
+          }
         }
+
         resolve();
       }
     } catch (error) {
