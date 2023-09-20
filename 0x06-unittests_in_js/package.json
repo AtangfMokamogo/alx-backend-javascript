@@ -1,0 +1,14 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "This package is for practicing unittesting using mocha and chai libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./"
+  },
+  "author": "Atang Mokamogo",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
