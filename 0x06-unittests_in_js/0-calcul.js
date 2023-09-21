@@ -3,6 +3,7 @@
  * @function
  * @param {Number} a - The first number.
  * @param {Number} b - The second number.
+ * @returns {Number} computed result
  * @author Fino Atang Mokamogo
  */
 function calculateNumber (a, b) {
