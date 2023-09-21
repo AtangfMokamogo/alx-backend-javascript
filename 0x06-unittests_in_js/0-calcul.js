@@ -5,7 +5,7 @@
  * @param {Number} b - The second number.
  * @author Fino Atang Mokamogo
  */
-function calculateNumber(a, b) {
+function calculateNumber (a, b) {
   const A = Math.round(a);
   const B = Math.round(b);
 
