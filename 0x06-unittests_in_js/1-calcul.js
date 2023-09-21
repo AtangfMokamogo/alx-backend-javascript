@@ -1,7 +1,4 @@
 function calculateNumber (type, a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new TypeError('Both arguments must be numbers');
-  }
   const A = Math.round(a);
   const B = Math.round(b);
 
