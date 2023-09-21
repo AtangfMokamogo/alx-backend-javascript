@@ -5,11 +5,7 @@
  * @param {Number} b - The second number.
  * @author Fino Atang Mokamogo
  */
-function calculateNumber (a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new TypeError('Please Provide ONLY NUMBER TYPES as arguments');
-  }
-
+function calculateNumber(a, b) {
   const A = Math.round(a);
   const B = Math.round(b);
 
@@ -17,6 +13,4 @@ function calculateNumber (a, b) {
 
   return sum;
 }
-module.exports = {
-  calculateNumber
-};
+module.exports = { calculateNumber };
