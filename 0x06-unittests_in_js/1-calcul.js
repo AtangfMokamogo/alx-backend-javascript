@@ -2,7 +2,7 @@
  * rounds up and carries out the passed operation on the numbers.
  * @param {String} type the opration to carry out.
  * @param {Number} a the first number.
- * @param {Number} b the second number. 
+ * @param {Number} b the second number.
  * @returns {Number} computed result
  * @author Atang Mokamogo
  */
